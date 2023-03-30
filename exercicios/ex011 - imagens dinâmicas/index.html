@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTML5</title>
+</head>
+<body>
+    <h1>Testando imagens dinâmicas</h1>
+    <p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador.</p>
+
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png">
+        <img src="imagens/foto-g.png" alt="A imagem flexível funciona">
+    </picture>
+    <h1>Adicionado áudio</h1>
+    <p>Adicionando áudio com as tags &lt;audio&gt;</p>
+
+    <audio preload="metadata" controls  loop>
+        <source src="midia/musica1.mp3" type="audio/mp3">
+        <source src="midia/musica1.ogg" type="audio/ogg">
+        <source src="midia/musica1.mp3" type="audio/wav">
+        <p>Seu navegador não suporta áudio <a href="midia/musica1.mp3" download="musica1.mp3" type="audio/mp3"></a></p>
+    </audio>
+
+    <!-- <audio src="midia/musica1.mp3" controls ></audio> -->  <!--Ou pode adicionar dessa maneira mais simples.-->
+
+
+    <h1>Adicionado vídeo</h1>
+   <video width="600" poster="midia/thumb.jpg"  controls autoplay>
+    <source src="midia/meu-video.mp4" type="video/mp4">
+    <p>Seu navegador não conseguiu carregar o vídeo.</p>
+    
+   </video>
+</body>
+</html>

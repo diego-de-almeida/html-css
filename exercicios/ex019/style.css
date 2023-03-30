@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgb(31, 97, 75);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    color: aqua;
+}
+
+#principal, .texto {
+    text-align: center;
+    background-color: blue;
+}
+
+h2 {
+    color: green;
+}
+
+.basico {
+    color: grey;
+    font-weight: bold;
+}
+
+.intermediario {
+    color: yellow;
+}
+
+.avancado {
+    color: red;
+}
+
+.destaque {
+    background-color: antiquewhite;
+}
+div {
+    text-align: center;
+    height: auto;
+    width: 700px;
+    color: yellowgreen;
+    border: solid;
+} 
+
+div > p {
+    display: none;
+}
+
+div:hover > p {
+    display: block;
+    color: white;
+    background-color: red;
+    width: 300px;
+}
