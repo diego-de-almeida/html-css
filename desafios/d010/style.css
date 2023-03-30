@@ -170,3 +170,6 @@ footer a:hover {
 .externo::after {
     content: '\1F517';
 }
+main > h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
