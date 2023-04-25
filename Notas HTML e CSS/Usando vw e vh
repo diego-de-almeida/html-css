@@ -1,0 +1,23 @@
+Às vezes o TEXTO do nosso site fica adequado para telas maiores (desktop) mas quando abrimos a página em uma tela menor (celular), começa a ficar grande demais para ler... Então quando surgir esse tipo de problema, temos que tentar adaptar o texto do site pensando nessa questão.
+
+No desafio "Cordel Moderno" usamos um recurso que faz com que o TEXTO do site aumente ou diminua de acordo com o tamanho (tamanho da largura) da janela do navegador.
+
+Para fazer isso, a dica é usar as unidades de medidas relativas das CSS, como o vh e vw. Basicamente, vh significa " viewport height " e vw significa " viewport width ". 
+
+Como nós já sabemos, de forma resumida a viewport é a área visível de uma janela. As unidades de medida vh e vw usam justamente o tamanho da viewport como referência para definir o tamanho das fontes de texto.
+
+Dessa forma, podemos configurar o nosso texto de uma maneira que ele aumente ou diminua dinamicamente, adaptando o tamanho desse texto para diferentes tamanhos de tela.  
+
+Sendo assim, se você quer formatar o seu texto dessa forma, ao invés de configurá-lo com unidades de medida absolutas (como px ou em), configure o tamanho do texto (font-size) com a unidade de medida "vw". 
+
+Exemplo:
+
+Para o título principal: font-size: 10vw;
+
+Paro o corpo da página: font-size: 3.5vw;
+
+Na primeira opção o tamanho da fonte vai ser referente a 10% da largura da viewport. Já na segunda opção, será referente a 3.5% da largura dessa viewport.
+
+Dessa forma, quando a tela for grande, ele coloca a letra grande... Quando a tela é menor, ele coloca a letra menor, alterando a o tamanho da fonte dinamicamente baseado na largura da tela. 
+
+Observação: Essa técnica das medidas vh e vw para adaptar o texto não é o melhor recurso para fazer esse tipo de adaptação dinâmica. Pode até funcionar, mas não gera um resultado 100% perfeito. O ideal para fazer esse tipo de adaptação seria usar Media Queries, um conceito que veremos mais pra frente.
