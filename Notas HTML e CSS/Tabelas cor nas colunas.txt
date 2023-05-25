@@ -1,0 +1,50 @@
+Considerando que temos uma tabela com algumas linhas e colunas, caso você queira destacar uma LINHA dessa tabela com uma cor diferente, basta identificar a tr desejada com um id ou class e abrir um seletor para essa linha identificada, inserindo uma declaração de background dentro desse seletor.
+
+Agora, se quisermos fazer essa mesma configuração de destaque, mas para uma COLUNA, como seria? 
+
+Na prática, tabelas no HTML não possuem colunas, na realidade elas tem células que nos levam a enxergar uma coluna... 
+
+Dessa forma, se você quiser estilizar uma coluna inteira sem precisar colocar o estilo em cada uma das células que representam essa coluna, terá que fazer algumas configurações específicas:
+
+TAG - COLGROUP:
+
+Para estilizar colunas mais facilmente, devemos usar a tag " colgroup ". Desde que essa tag esteja dentro de <table>, você pode inseri-la em qualquer lugar da sua tabela... Normalmente inserimos acima do thead ou do caption.
+
+A tag colgroup serve para especificar um grupo de uma ou mais colunas de uma tabela para formatação. Agrupa um conjunto de colunas em uma tabela HTML...
+
+TAG - COL:
+
+Dentro da tag  " colgroup " temos que usar a tag " col ". A tag col serve para especificar a coluna da nossa tabela no documento HTML, definindo propriedades em todas as células que formam essa coluna. 
+
+Usamos essa tag para fazer uma espécie de identificação das colunas da nossa tabela... Por exemplo, se a sua tabela tem três colunas e você quer estilizar todas elas, basicamente você deve abrir três tags col dentro de colgroup, cada tag representará uma coluna dessa tabela. 
+
+Observação: Dentro da tag col, podemos usar o parâmetro " span " com um valor numérico. Esse parâmetro define quantas colunas a respectiva tag col deve abranger. Por exemplo, se você usar o parâmetro span com o valor " 2 ", fará com que o respectivo col abranja duas colunas, dessa forma toda declaração de estilo que for aplicada à essa col, será válida para as duas colunas. 
+
+O HTML associa as tags col com as colunas da tabela de forma sequencial... Isso significa que a primeira tag será associada à primeira coluna da tabela, a segunda tag será associada à segunda coluna da tabela e assim por diante com as próximas tags e colunas. (caso use o parâmetro span, considere a abrangência extra configurada para o respectivo col)
+
+Geralmente identificamos as tags col (nossas colunas) com class ou id, tornando possível abrirmos seletores CSS para essas colunas específicas e estilizarmos elas a partir daí...
+
+COLGROUP/COL - LIMITAÇÕES:
+
+De acordo com a documentação oficial, apenas 4 tipos de propriedades CSS podem ser aplicadas a colgroup/col:
+
+- Border
+- Background
+- Width
+- Visibility
+
+Logo qualquer outra propriedade não vai funcionar, como por exemplo text-align, font-weight e por aí vai...
+
+Caso queria estilizar as colunas de forma livre, ao invés de usar colgroup/col, utilize o seletor a seguir:
+
+tr > td:nth-child(2) {
+    text-align: center;
+}
+
+Esse seletor vai estilizar cada coluna individualmente assim como colgroup/col, porém com a liberdade total das propriedades...
+
+Ele faz isso aplicando o estilo ao segundo elemento <td> ou <th> (td no seletor do exemplo) de cada linha da tabela.
+
+O número dentro de nth-child(2) vai definir qual coluna vai ser estilizada.
+
+Essa forma funciona bem, mas tenham em mente que usar <colgroup> e <col> é a melhor maneira. Fica mais semântico e mais flexível.
